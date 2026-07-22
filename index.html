@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frutería Mis Dos Angelitos | Oxkutzcab, Yucatán - Frutas y Verduras Frescas</title>
+  <meta name="description" content="Frutería Mis Dos Angelitos en Oxkutzcab, Yucatán. Frutas y verduras de la región al menudeo ($5-$50) y mayoreo por huacal (máx $500). Servicio a domicilio en Oxkutzcab, Dzan, Maní, Akil y Zapata.">
+  <meta name="keywords" content="fruteria oxkutzcab, frutas yucatan, huacal de naranja, limon persa, habanero, servicio a domicilio oxkutzcab, mayoreo frutas">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Frutería Mis Dos Angelitos | Frescura de Oxkutzcab">
+  <meta property="og:description" content="Las mejores frutas y verduras del campo yucateco hasta tu hogar o negocio. Ventas por kilo, pieza y huacales.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="top-bar">
+    <div class="top-bar-content">
+      <span class="live-badge">
+        <span class="pulse-dot"></span> Abierto Hoy: 7:00 AM - 8:00 PM
+      </span>
+      <span>📍 Servicio a Domicilio en Oxkutzcab, Dzan, Maní, Akil y Zapata</span>
+      <span>📞 Pedidos al: <a href="tel:9971326728" style="text-decoration: underline; color: #fff;">997 132 6728</a></span>
+    </div>
+  </div>
+
+  <!-- STICKY NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon">🍊</span>
+        <span>Mis Dos <span class="logo-highlight">Angelitos</span></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#hero" class="nav-link active">Inicio</a>
+        <a href="#about" class="nav-link">Nosotros</a>
+        <a href="#catalog" class="nav-link">Catálogo</a>
+        <a href="#mayoreo" class="nav-link">Mayoreo 3D</a>
+        <a href="#cobertura" class="nav-link">Cobertura</a>
+        <a href="#faq" class="nav-link">Preguntas</a>
+        <a href="#contact" class="nav-link">Contacto</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-toggle-btn" id="cart-toggle-btn">
+          <i class="fa-solid fa-calculator"></i>
+          <span>Calculadora</span>
+          <span class="cart-count-badge" id="cart-count-badge">0</span>
+        </button>
+
+        <a href="https://wa.me/529971326728?text=Hola%20%F0%9F%90%8B%2C%20me%20gustar%C3%ADa%20realizar%20un%20pedido%20de%20frutas%20y%20verduras." target="_blank" class="btn btn-primary">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION WITH 3D CANVAS -->
+  <section class="hero" id="hero">
+    <div class="hero-container">
+      <div class="hero-text-content">
+        <div class="hero-badge">
+          <i class="fa-solid fa-seedling"></i> De la huerta de Oxkutzcab a tu mesa
+        </div>
+        <h1 class="hero-title">
+          Frutas y Verduras <span>Frescas Todos los Días</span>
+        </h1>
+        <p class="hero-subtitle">
+          "La frescura que llega hasta tu hogar". Cosecha seleccionada diariamente al menudeo (desde $5 a $50) y mayoreo en huacales (máx. $500 por caja).
+        </p>
+
+        <div class="hero-cta-group">
+          <button class="btn btn-primary" onclick="document.getElementById('catalog').scrollIntoView({behavior: 'smooth'})">
+            <i class="fa-solid fa-basket-shopping"></i> Ver Catálogo y Precios
+          </button>
+          <a href="https://wa.me/529971326728?text=Hola%20%F0%9F%90%8B%2C%20quisiera%20pedir%20informaci%C3%B3n%20sobre%20sus%20productos." target="_blank" class="btn btn-secondary">
+            <i class="fa-brands fa-whatsapp"></i> Pedido Rápido por WhatsApp
+          </a>
+        </div>
+
+        <div class="hero-features">
+          <div class="hero-feature-item">
+            <i class="fa-solid fa-truck-fast"></i> Entrega Rápida
+          </div>
+          <div class="hero-feature-item">
+            <i class="fa-solid fa-medal"></i> Calidad Garantizada
+          </div>
+          <div class="hero-feature-item">
+            <i class="fa-solid fa-hand-holding-dollar"></i> Precios Justos
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Canvas -->
+      <div class="hero-3d-wrapper">
+        <canvas id="hero-canvas"></canvas>
+        <div class="canvas-hint">✨ Interactúa en 3D: Mueve tu cursor sobre la fruta</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="section about" id="about">
+    <div class="about-grid">
+      <div class="about-card">
+        <span class="section-tag">Nuestra Historia</span>
+        <h3>Frutería Mis Dos Angelitos</h3>
+        <p>
+          Ubicados en el municipio de Oxkutzcab, conocido como la huerta del estado de Yucatán, nos dedicamos apasionadamente a la venta de frutas y verduras frescas recién cosechadas de la región.
+        </p>
+        <p>
+          Nuestra misión es ofrecer alimentos saludables, de primera calidad y a precios altamente accesibles tanto para familias en menudeo como para negocios, restaurantes y cocinas en mayoreo.
+        </p>
+
+        <div class="values-grid">
+          <div class="value-item">
+            <div class="value-icon"><i class="fa-solid fa-leaf"></i></div>
+            <span>Frescura Total</span>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <span>Honestidad</span>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fa-solid fa-shield-heart"></i></div>
+            <span>Calidad Garantizada</span>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><i class="fa-solid fa-user-group"></i></div>
+            <span>Atención Amable</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <div class="about-card" style="background: linear-gradient(135deg, var(--emerald-light), #ffffff);">
+          <span class="section-tag" style="color: var(--primary-green);">Nuestra Misión</span>
+          <h4 style="font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 8px;">Compromiso con el Campo Yucateco</h4>
+          <p>
+            Brindar frutas y verduras frescas de excelente calidad y al mejor precio, ofreciendo un servicio amable, confiable y eficiente que contribuya a la alimentación saludable de nuestra comunidad.
+          </p>
+        </div>
+
+        <div class="about-card" style="background: linear-gradient(135deg, var(--orange-light), #ffffff);">
+          <span class="section-tag">Nuestra Visión</span>
+          <h4 style="font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 8px;">Líderes en Oxkutzcab y Alrededores</h4>
+          <p>
+            Ser la frutería líder de la región, reconocida por la frescura inigualable de nuestros productos, la confianza de nuestros clientes y la constante expansión de nuestro servicio a domicilio.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATALOG SECTION -->
+  <section class="section catalog" id="catalog">
+    <div class="section-header">
+      <span class="section-tag">Catálogo Completo</span>
+      <h2 class="section-title">Productos Locales de Yucatán</h2>
+      <p class="section-subtitle">
+        Selecciona tus frutas y verduras por kilo/pieza (Menudeo $5 - $50) o por huacal completo al mayoreo (máximo $500 MXN).
+      </p>
+    </div>
+
+    <div class="catalog-controls">
+      <div class="catalog-tabs">
+        <button class="tab-btn active" data-category="all" id="tab-all">Todos los Productos</button>
+        <button class="tab-btn" data-category="frutas" id="tab-frutas">🍊 Frutas</button>
+        <button class="tab-btn" data-category="verduras" id="tab-verduras">🥦 Verduras</button>
+        <button class="tab-btn" data-category="temporada" id="tab-temporada">🌟 De Temporada</button>
+        <button class="tab-btn" data-category="mayoreo" id="tab-mayoreo">📦 Huacales Mayoreo</button>
+      </div>
+
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" class="search-input" id="search-input" placeholder="Buscar naranja, limón, habanero, mamey, papaya...">
+      </div>
+    </div>
+
+    <div class="products-grid" id="products-grid">
+      <!-- Dynamic Products Rendered via JS -->
+    </div>
+  </section>
+
+  <!-- WHOLESALE & 3D CRATE SECTION -->
+  <section class="section wholesale-section" id="mayoreo">
+    <div class="section-header">
+      <span class="section-tag" style="color: var(--mango-yellow);">Servicio Especial para Negocios</span>
+      <h2 class="section-title">Venta al Mayoreo por Huacal</h2>
+      <p class="section-subtitle">
+        Surtimos a restaurantes, cocinas económicas, hoteles, cafeterías y tiendas de abarrotes con el mejor huacal de madera tradicional.
+      </p>
+    </div>
+
+    <div class="wholesale-grid">
+      <div class="wholesale-info">
+        <span class="wholesale-badge">✨ Huacales de 18 kg a 25 kg</span>
+        <h3 style="font-family: var(--font-heading); font-size: 2rem; color: #ffffff;">
+          Garantía de Precio: Ningún huacal supera los $500 MXN
+        </h3>
+        <p style="color: #CBD5E1; line-height: 1.7;">
+          Entendemos las necesidades de tu negocio. Por ello te ofrecemos cajas de madera empacadas con frutas y verduras seleccionadas de primera calidad, listas para entrega inmediata en tu establecimiento.
+        </p>
+
+        <div class="wholesale-cards">
+          <div class="w-card">
+            <h4><i class="fa-solid fa-utensils"></i> Restaurantes</h4>
+            <p>Surtido constante de tomate, habanero, limón y cebolla.</p>
+          </div>
+          <div class="w-card">
+            <h4><i class="fa-solid fa-hotel"></i> Hoteles y Posadas</h4>
+            <p>Fruta de temporada para desayunos buffet y jugos frescos.</p>
+          </div>
+          <div class="w-card">
+            <h4><i class="fa-solid fa-store"></i> Abarrotes y Tiendas</h4>
+            <p>Precios especiales para reventa con excelente margen.</p>
+          </div>
+          <div class="w-card">
+            <h4><i class="fa-solid fa-blender"></i> Cafeterías y Juguerías</h4>
+            <p>Naranja dulce y toronja de la mejor selección de Oxkutzcab.</p>
+          </div>
+        </div>
+
+        <a href="https://wa.me/529971326728?text=Hola%20%F0%9F%90%8B%2C%20me%20interesa%20una%20cotizaci%C3%B3n%20al%20mayoreo%20para%20mi%20negocio." target="_blank" class="btn btn-primary" style="width: fit-content;">
+          <i class="fa-brands fa-whatsapp"></i> Solicitar Cotización de Mayoreo
+        </a>
+      </div>
+
+      <div id="crate-canvas-container">
+        <canvas id="crate-canvas"></canvas>
+        <div class="canvas-hint" style="background: rgba(0,0,0,0.6); color: #fff;">📦 Modelo 3D: Arrastra para girar el Huacal Tradicional</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE SECTION -->
+  <section class="section coverage" id="cobertura">
+    <div class="section-header">
+      <span class="section-tag">Servicio a Domicilio</span>
+      <h2 class="section-title">Lugares de Entrega</h2>
+      <p class="section-subtitle"> Llevamos la frescura del campo directo a la puerta de tu hogar o local comercial.</p>
+    </div>
+
+    <div class="coverage-grid">
+      <div class="coverage-card">
+        <div class="coverage-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="coverage-name">Oxkutzcab</div>
+        <div class="coverage-time">⏱️ 15 - 30 min</div>
+        <div class="coverage-cost">Envío Gratis (Zona Centro)</div>
+      </div>
+
+      <div class="coverage-card">
+        <div class="coverage-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+        <div class="coverage-name">Dzan</div>
+        <div class="coverage-time">⏱️ 30 - 45 min</div>
+        <div class="coverage-cost">Costo mínimo $20 MXN</div>
+      </div>
+
+      <div class="coverage-card">
+        <div class="coverage-icon"><i class="fa-solid fa-place-of-worship"></i></div>
+        <div class="coverage-name">Maní (Pueblo Mágico)</div>
+        <div class="coverage-time">⏱️ 30 - 50 min</div>
+        <div class="coverage-cost">Envío $25 MXN</div>
+      </div>
+
+      <div class="coverage-card">
+        <div class="coverage-icon"><i class="fa-solid fa-route"></i></div>
+        <div class="coverage-name">Akil</div>
+        <div class="coverage-time">⏱️ 25 - 40 min</div>
+        <div class="coverage-cost">Costo mínimo $20 MXN</div>
+      </div>
+
+      <div class="coverage-card">
+        <div class="coverage-icon"><i class="fa-solid fa-house-flag"></i></div>
+        <div class="coverage-name">Emiliano Zapata</div>
+        <div class="coverage-time">⏱️ 20 - 35 min</div>
+        <div class="coverage-cost">Envío $15 MXN</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section class="section gallery" style="background: #ffffff;" id="galeria">
+    <div class="section-header">
+      <span class="section-tag">Nuestras Cosechas</span>
+      <h2 class="section-title">Galería de Frescura</h2>
+      <p class="section-subtitle">Imágenes representativas de nuestros productos seleccionados diariamente.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        🍊
+        <div class="gallery-overlay">Naranja Dulce de Oxkutzcab</div>
+      </div>
+      <div class="gallery-item" style="background: #FFF3E0;">
+        🥭
+        <div class="gallery-overlay">Mango Ataulfo de Temporada</div>
+      </div>
+      <div class="gallery-item" style="background: #FFEBEE;">
+        🌺
+        <div class="gallery-overlay">Pitahaya Roja Yucateca</div>
+      </div>
+      <div class="gallery-item" style="background: #E8F5E9;">
+        🌶️
+        <div class="gallery-overlay">Chile Habanero Fresco</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section faq-section" id="faq">
+    <div class="section-header">
+      <span class="section-tag">Resuelve tus Dudas</span>
+      <h2 class="section-title">Preguntas Frecuentes</h2>
+      <p class="section-subtitle">Todo lo que necesitas saber sobre pedidos, envíos y pagos.</p>
+    </div>
+
+    <div class="faq-container">
+      <div class="faq-item active">
+        <button class="faq-question">
+          <span>¿Realizan entregas a domicilio y dónde?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          Sí, entregamos a domicilio en Oxkutzcab, Dzan, Maní, Akil y la comisaría Emiliano Zapata.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Aceptan pedidos directos por WhatsApp?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          ¡Sí! Puedes usar la calculadora interactiva de este sitio web para armar tu carrito o escribirnos directamente al WhatsApp 997 132 6728.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Cuáles son los precios al mayoreo?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          Manejamos venta de huacales (cajas de 18 a 25kg) con precios especiales para negocios que nunca superan los $500.00 MXN por huacal.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Qué métodos de pago aceptan?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          Aceptamos efectivo al momento de la entrega y transferencias electrónicas bancarias (SPEI).
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Los productos son garantizados frescos?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          Totalmente. Todos los días seleccionamos los mejores frutos directo de las huertas de Oxkutzcab para garantizar la máxima frescura y sabor.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & MAP SECTION -->
+  <section class="section contact" id="contact" style="background: #ffffff;">
+    <div class="section-header">
+      <span class="section-tag">Estamos para Servirte</span>
+      <h2 class="section-title">Información de Contacto</h2>
+      <p class="section-subtitle">Visítanos o contáctanos para cualquier duda o cotización.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3 style="font-family: var(--font-heading); color: var(--primary-green); font-size: 1.6rem;">Frutería Mis Dos Angelitos</h3>
+        <p style="color: var(--slate-gray); margin-top: 6px;">Tu opción confiable en frutas y verduras en Oxkutzcab.</p>
+
+        <div class="contact-info-list">
+          <div class="c-info-item">
+            <div class="c-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="c-detail">
+              <h5>Ubicación</h5>
+              <p>Municipio de Oxkutzcab, Yucatán, México.</p>
+            </div>
+          </div>
+
+          <div class="c-info-item">
+            <div class="c-icon"><i class="fa-solid fa-phone"></i></div>
+            <div class="c-detail">
+              <h5>Teléfono / WhatsApp</h5>
+              <p><a href="tel:9971326728" style="color: var(--citrus-orange); font-weight: 700;">997 132 6728</a></p>
+            </div>
+          </div>
+
+          <div class="c-info-item">
+            <div class="c-icon"><i class="fa-solid fa-clock"></i></div>
+            <div class="c-detail">
+              <h5>Horario de Atención</h5>
+              <p>Lunes a Domingo: 7:00 AM - 8:00 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 30px;">
+          <a href="https://wa.me/529971326728?text=Hola%20%F0%9F%90%8B%2C%20quisiera%20hacer%20una%20consulta." target="_blank" class="btn btn-primary" style="width: 100%;">
+            <i class="fa-brands fa-whatsapp"></i> Chatear por WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="map-wrapper">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14948.42378912345!2d-89.42145!3d20.30612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f5669b30c5e7b23%3A0x6b1076b91fa8770!2sOxkutzcab%2C%20Yuc.!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR / CART DRAWER MODAL -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="drawer-header">
+        <h3><i class="fa-solid fa-calculator"></i> Calculadora de Pedido</h3>
+        <button class="close-drawer-btn" id="close-drawer-btn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="drawer-body" id="drawer-body">
+        <!-- Rendered dynamically by JS -->
+      </div>
+
+      <div class="drawer-footer">
+        <div class="cart-summary-row">
+          <span>Total Estimado:</span>
+          <span id="cart-total-amount" style="color: var(--citrus-orange);">$0.00 MXN</span>
+        </div>
+        <button class="checkout-btn" id="send-whatsapp-order-btn">
+          <i class="fa-brands fa-whatsapp"></i> Finalizar Pedido por WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING WIDGETS -->
+  <div class="floating-widgets">
+    <button class="float-btn chatbot-float" id="chatbot-float-btn" title="AngelitoBot Inteligente">
+      🤖
+    </button>
+    <a href="https://wa.me/529971326728?text=Hola%20%F0%9F%90%8B%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido." target="_blank" class="float-btn whatsapp-float" title="Contactar por WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- CHATBOT WINDOW ("AngelitoBot") -->
+  <div class="chatbot-window" id="chatbot-window">
+    <div class="chat-header">
+      <div class="chat-bot-info">
+        <span class="bot-avatar">🤖</span>
+        <div>
+          <div class="chat-title">AngelitoBot</div>
+          <div class="chat-status">🟢 Asistente Virtual 24/7</div>
+        </div>
+      </div>
+      <button style="background:transparent; color:#fff; font-size:1.2rem;" id="close-chatbot-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="chat-body" id="chat-body">
+      <div class="chat-msg bot">
+        ¡Hola! 👋 Bienvenido a Frutería Mis Dos Angelitos en Oxkutzcab. ¿En qué te puedo ayudar hoy?
+      </div>
+    </div>
+
+    <div class="chat-quick-replies">
+      <button class="quick-chip" data-query="¿Cuál es el horario?">⏰ Horario</button>
+      <button class="quick-chip" data-query="¿Tienen servicio a domicilio?">🚚 Cobertura</button>
+      <button class="quick-chip" data-query="¿Venden al mayoreo en huacal?">📦 Mayoreo</button>
+      <button class="quick-chip" data-query="¿Qué formas de pago aceptan?">💵 Pagos</button>
+    </div>
+
+    <div class="chat-input-area">
+      <input type="text" class="chat-input" id="chat-input" placeholder="Escribe tu duda aquí...">
+      <button class="send-chat-btn" id="send-chat-btn"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Frutería Mis Dos Angelitos</h3>
+        <p>
+          "La frescura que llega hasta tu hogar". Frutas y verduras 100% seleccionadas del campo yucateco en Oxkutzcab.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/529971326728" target="_blank" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Enlaces Rápidos</h4>
+        <div class="footer-links">
+          <a href="#hero">Inicio</a>
+          <a href="#about">Nosotros</a>
+          <a href="#catalog">Catálogo</a>
+          <a href="#mayoreo">Mayoreo 3D</a>
+          <a href="#cobertura">Cobertura</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Cobertura</h4>
+        <div class="footer-links">
+          <span>📍 Oxkutzcab</span>
+          <span>📍 Dzan</span>
+          <span>📍 Maní</span>
+          <span>📍 Akil</span>
+          <span>📍 Emiliano Zapata</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto Directo</h4>
+        <p>📍 Oxkutzcab, Yucatán</p>
+        <p>📞 Tel: 997 132 6728</p>
+        <p>⏰ 7:00 AM - 8:00 PM (Diario)</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Frutería Mis Dos Angelitos. Todos los derechos reservados. Oxkutzcab, Yucatán, México.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="products.js"></script>
+  <script src="three3d.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
